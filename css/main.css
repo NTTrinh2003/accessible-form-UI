@@ -3,30 +3,160 @@
     margin: 0;
 }
 
+/* Background and Font */
 body {
     background-color: #f2f3f5;
     font-family: 'Roboto', sans-serif;   
 }
 
+/* Outer container layout */
 .container {
+    display: flex;
     max-width: 678px;
     height: 80vh;
     padding: 1rem;
-    background-color: white;
-    margin: 10vh auto;
-    box-shadow: rgba(9, 30, 66, .25) 0 4px 8px -2px;
-    border: solid #ccc 1px;
+    margin: 7vh auto;
     border-radius: 1rem;
 }
 
+/* Outer container styling */
+.container {
+    background-color: white;
+    box-shadow: rgba(9, 30, 66, .25) 0 4px 8px -2px;
+    border: solid #ccc 1px;
+}
+
+/* Inner container layout */
 .inner-container {
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 3rem;
+    grid-template-columns: 55% 45%;
+    grid-gap: 1.5rem;
+    padding: 1rem 2rem;
 }
 
+/* Input fields layout */
+.input-fields {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 50px;
+}
+
+/* Each input field layout */
 .input {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+}
+
+/* Text input fields layout */
+.input input {
+    margin: .5rem .5rem .5rem 0;
+    padding: .5rem;
+    border: solid #ccc 3px;
+    border-radius: .5rem;
+}
+
+/* Input field's labels layout */
+.input label {
+    margin-bottom: .5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Submit button layout */
+.submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit button {
+    width: 80%;
+    height: 65%;
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: .5rem;
+    outline: none;
+    cursor: pointer;
+    background-color: #444;
+    color: white;
+}
+
+.submit button:hover {
+    background-color: #000;
+    /* color: black; */
+}
+
+/* Progress layout */
+.progress {
+    display: grid;
+    grid-template-rows: 10rem 1fr;
+}
+
+/* Completeness chart layout */
+.show-completeness {
+    width: 90%;
+    height: 100%;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show-completeness .chart-progress {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: conic-gradient(
+        rgb(26, 112, 26) 0% 65%, /* Current progress */
+        rgb(188, 188, 188) 65% 100% /* Remaining progress */
+    );
+}
+
+.show-completeness .percentage {
+    display: flex;
+    width: 9.5rem;
+    height: 9.5rem;
+    border-radius: 50%;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+/* Detail Profile Progress */
+.completeness-list {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+}
+
+.completeness-list .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.completeness-list .list {
+    flex: 1;
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 1rem;
+    flex-direction: column;
+    padding: 2.5rem 2rem;
+    /* align-items: center; */
+}
+
+.completeness-list .list {
+    border: none;
+    border-radius: 1rem;
+    background-color: #ddd;
+    font-size: 14px;
+}
+
+.completeness-list .list .done {
+    text-decoration: line-through;
+    color: #666;
 }
